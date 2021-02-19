@@ -10,7 +10,7 @@ function encrypt(text) {
   let encrypted = cipher.update(text);
   encrypted = Buffer.concat([encrypted, cipher.final()]);
   return iv.toString("hex") + ":" + encrypted.toString("hex");
-}
+};
 
 function decrypt(text) {
   let textParts = text.split(":");
@@ -20,10 +20,10 @@ function decrypt(text) {
   let decrypted = decipher.update(encryptedText);
   decrypted = Buffer.concat([decrypted, decipher.final()]);
   return decrypted.toString();
-}
+};
 
 function random() {
   return crypto.randomBytes(16).toString("hex");
-}
+};
 
 module.exports = { encrypt, decrypt, random };
