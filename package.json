@@ -17,5 +17,5 @@
     "type": "git",
     "url": "https://github.com/kremeshnoi/auth-server.git"
   },
-  "description": "Server that provides API for authentication, using Node.js and Redis."
+  "description": "Service that provides API for authentication, using Node.js and Redis"
 }
