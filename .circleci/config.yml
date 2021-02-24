@@ -5,4 +5,9 @@ orbs:
 workflows:
   node-tests:
     jobs:
-      - node/test
+      build:
+        steps:
+        - node/test
+        - codecov/upload:
+              - codecov/upload:
+                file: {{ coverage_report_filepath }}
