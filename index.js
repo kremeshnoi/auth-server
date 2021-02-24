@@ -4,8 +4,8 @@ const express = require("express");
 const bodyParser = require("body-parser");
 
 const client = redis.createClient({
-  port: process.env.REDIS_PORT || 6379,
-  host: process.env.REDIS_HOST || "localhost",
+  port: process.env.REDIS_PORT,
+  host: process.env.REDIS_HOST,
 });
 
 client.on("connect", () => {
@@ -23,4 +23,6 @@ routes.forEach((item) => {
 
 console.log("server works");
 
-http.createServer({}, app).listen(3001);
+http.createServer({}, app).listen(3000);
+
+module.exports = client;

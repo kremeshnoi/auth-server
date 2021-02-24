@@ -3,9 +3,9 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js"
+    "start": "nodemon index.js"
   },
-  "author": "",
+  "author": "kremeshnoi",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
@@ -13,5 +13,9 @@
     "ioredis": "^4.22.0"
   },
   "devDependencies": {},
-  "description": ""
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/kremeshnoi/auth-server.git"
+  },
+  "description": "Server that provides API for authentication, using Node.js and Redis."
 }
