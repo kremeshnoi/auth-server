@@ -1,10 +1,15 @@
 # Auth Server
+[![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/kremeshnoi/auth-server)
+[![Codecov](https://codecov.io/gh/kremeshnoi/auth-server/branch/main/graph/badge.svg?token=9MM4TPA1NZ)](https://codecov.io/gh/kremeshnoi/auth-server)
+![Docker Automated build](https://img.shields.io/docker/automated/kremeshnoi/auth-server)
+
 Server that provides API for authentication, using Node.js and Redis
 
-<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png" width="140px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-<img align="center" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1920px-Redis_Logo.svg.png" width="200">
+<img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png" width="100px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img align="center" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1920px-Redis_Logo.svg.png" width="130">
 
-<img align="center" src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" width="220">
+<img align="center" src="https://www.docker.com/sites/default/files/d8/2019-07/horizontal-logo-monochromatic-white.png" width="155"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+<img align="center" src="https://raw.githubusercontent.com/swagger-api/swagger.io/wordpress/images/assets/SWU-logo-clr.png" width="155">
 
 ## Requirements
  * Redis https://redis.io/download
