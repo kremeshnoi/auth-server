@@ -1,6 +1,5 @@
 # Auth Server
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/kremeshnoi/auth-server)
-[![Codecov](https://codecov.io/gh/kremeshnoi/auth-server/branch/main/graph/badge.svg?token=9MM4TPA1NZ)](https://codecov.io/gh/kremeshnoi/auth-server)
 ![Docker Automated build](https://img.shields.io/docker/automated/kremeshnoi/auth-server)
 
 Server that provides API for authentication, using Node.js and Redis
