@@ -15,7 +15,7 @@
   "devDependencies": {},
   "repository": {
     "type": "git",
-    "url": "https://github.com/kremeshnoi/auth-server.git"
+    "url": "https://github.com/kremeshnoi/auth-service.git"
   },
   "description": "Service that provides API for authentication, using Node.js and Redis"
 }
