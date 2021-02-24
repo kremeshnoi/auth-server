@@ -1,13 +1,7 @@
 version: 2.1
 orbs:
   node: circleci/node@3.0.0
-  codecov: codecov/codecov@1.0.2
 workflows:
   node-tests:
     jobs:
-      build:
-        steps:
-        - node/test
-        - codecov/upload:
-              - codecov/upload:
-                file: {{ coverage_report_filepath }}
+      - node/test
