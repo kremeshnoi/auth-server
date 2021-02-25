@@ -5,16 +5,16 @@ const tcwrapper = require("../utils/tcwrapper")
 const auth = () => ({
 	login(req, res) {
 		tcwrapper(() => {
-			const new_access_token = random()
-			const new_refresh_token = random()
+			const newAccessToken = random()
+			const newRefreshToken = random()
 			client.get(`user:${ req.body.username }`, (error, result) => {
 				if (decrypt(result) === req.body.password) {
-					client.set(`access_token:${ new_access_token }:${ new_refresh_token }`, req.body.username)
-					client.expire(`access_token:${ new_access_token }:${ new_refresh_token }`, 3600)
-					client.set(`refresh_token:${ new_refresh_token }:${ new_access_token }`, req.body.username)
-					client.expire(`refresh_token:${ new_refresh_token }:${ new_access_token }`, 7200)
-					res.set("Access-Token", `${ new_access_token }:${ new_refresh_token }`)
-					res.set("Refresh-Token", `${ new_refresh_token }:${ new_access_token }`)
+					client.set(`access_token:${ newAccessToken }:${ newRefreshToken }`, req.body.username)
+					client.expire(`access_token:${ newAccessToken }:${ newRefreshToken }`, 3600)
+					client.set(`refresh_token:${ newRefreshToken }:${ newAccessToken }`, req.body.username)
+					client.expire(`refresh_token:${ newRefreshToken }:${ newAccessToken }`, 7200)
+					res.set("Access-Token", `${ newAccessToken }:${ newRefreshToken }`)
+					res.set("Refresh-Token", `${ newRefreshToken }:${ newAccessToken }`)
 					res.send("success")
 				} else res.send("wrong password")
 			})
@@ -22,28 +22,28 @@ const auth = () => ({
 	},
 	refresh(req, res) {
 		tcwrapper(() => {
-			const header_refresh_token = req.get("Refresh-Token")
-			const new_access_token = random()
-			const new_refresh_token = random()
-			const matched_access_token = 	header_refresh_token.split(":").reverse().join(":")
-			client.get(`access_token:${ header_refresh_token }`, (error, result) => {
-				client.set(`access_token:${ new_access_token }:${ new_refresh_token }`, result)
-				client.expire(`access_token:${ new_access_token }:${ new_refresh_token }`, 3600)
-				client.set(`refresh_token:${ new_refresh_token }: ${ new_access_token }`, result)
-				client.expire(`refresh_token:${ new_refresh_token }: ${ new_access_token }`, 7200)
+			const headerRefreshToken = req.get("Refresh-Token")
+			const newAccessToken = random()
+			const newRefreshToken = random()
+			const matchedAccessToken = 	headerRefreshToken.split(":").reverse().join(":")
+			client.get(`access_token:${ headerRefreshToken }`, (error, result) => {
+				client.set(`access_token:${ newAccessToken }:${ newRefreshToken }`, result)
+				client.expire(`access_token:${ newAccessToken }:${ newRefreshToken }`, 3600)
+				client.set(`refresh_token:${ newRefreshToken }: ${ newAccessToken }`, result)
+				client.expire(`refresh_token:${ newRefreshToken }: ${ newAccessToken }`, 7200)
 			})
 
-			client.del(`access_token:${ matched_access_token }`)
-			client.del(`refresh_token:${ header_refresh_token }`)
+			client.del(`access_token:${ matchedAccessToken }`)
+			client.del(`refresh_token:${ headerRefreshToken }`)
 			res.send("tokens have been refreshed")
 		})
 	},
-	sign_out(req, res) {
+	signOut(req, res) {
 		tcwrapper(() => {
-			const header_access_token = req.get("Access-Token")
-			const matched_refresh_token = header_access_token.split(":").reverse().join(":")
-			client.del(`access_token:${ header_access_token }`)
-			client.del(`refresh_token:${ matched_refresh_token }`)
+			const headerAccessToken = req.get("Access-Token")
+			const matchedRefreshToken = headerAccessToken.split(":").reverse().join(":")
+			client.del(`access_token:${ headerAccessToken }`)
+			client.del(`refresh_token:${ matchedRefreshToken }`)
 			res.send("successfully logged out")
 		})
 	},
