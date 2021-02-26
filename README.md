@@ -2,8 +2,6 @@
 [![CircleCI](https://circleci.com/gh/circleci/circleci-docs.svg?style=shield)](https://circleci.com/gh/kremeshnoi/auth-server)
 ![Docker Automated build](https://img.shields.io/docker/automated/kremeshnoi/auth-service)
 
-Service that provides API for authentication, using Node.js and Redis
-
 <img align="center" src="https://upload.wikimedia.org/wikipedia/commons/thumb/d/d9/Node.js_logo.svg/590px-Node.js_logo.svg.png" width="100px"> &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 <img align="center" src="https://upload.wikimedia.org/wikipedia/en/thumb/6/6b/Redis_Logo.svg/1920px-Redis_Logo.svg.png" width="130">
 
