@@ -1,7 +1,7 @@
-# Editor directories
+# Editor directories and files
 .idea
 .vscode
 
-# Local development files
+# Local development directories and files
 node_modules
 /dist
